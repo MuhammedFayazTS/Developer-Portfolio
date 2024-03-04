@@ -1,6 +1,8 @@
 import { motion, useInView } from 'framer-motion'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { contactInfo } from '../../Content/data'
+import emailjs from '@emailjs/browser';
+import { RiCheckLine, RiErrorWarningLine } from '@remixicon/react';
 
 const variants = {
     initial: {
@@ -19,8 +21,32 @@ const variants = {
 
 function Contact() {
     const ref = useRef()
-
+    const formRef = useRef();
     const isInView = useInView(ref)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
+    const [success, setSuccess] = useState(false)
+
+    // send email
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setLoading(true)
+        emailjs
+            .sendForm('service_69s44hf', 'template_difg7b1', formRef.current, {
+                publicKey: 'OsZKRxBWrjxzc5XlJ',
+            })
+            .then(
+                () => {
+                    setSuccess(true)
+                    setLoading(false)
+                },
+                (error) => {
+                    setError(true)
+                    setLoading(false)
+                    console.log('FAILED...', error.text);
+                },
+            );
+    };
 
     return (
         <>
@@ -69,16 +95,36 @@ function Contact() {
                             />
                         </svg>
                     </motion.div>
-                    <motion.form initial={{ opacity: 0,zIndex:0 }} whileInView={{ opacity: 1,zIndex:1 }} transition={{ delay: 4, duration: 1 }}
+                    <motion.form ref={formRef}
+                        onSubmit={sendEmail}
+                        initial={{ opacity: 0, zIndex: 0 }} whileInView={{ opacity: 1, zIndex: 1 }} transition={{ delay: 4, duration: 1 }}
                         className='w-full flex flex-col space-y-5 md:px-16' >
-                        <input placeholder='Name' type="text" className='p-3 rounded-md bg-neutral-800 focus:outline-indigo-700 caret-purple-500' />
-                        <input placeholder='Email' type="email" className='p-3 rounded-md bg-neutral-800 focus:outline-indigo-700 caret-purple-500' />
-                        <textarea placeholder='Message' rows="3" className='p-3 rounded-md bg-neutral-800 focus:outline-indigo-700 caret-purple-500'></textarea>
-                        <button className='w-full p-3 rounded-md transition-colors duration-300 ease-in-out bg-gradient-to-tl from-purple-800 via-fuchsia-700 to-purple-800 hover:filter hover:contrast-150'>Send</button>
+                        <input placeholder='Name' type="text" name='name' className='p-3 rounded-md bg-neutral-800 focus:outline-indigo-700 caret-purple-500' />
+                        <input placeholder='Email' type="email" name='email' className='p-3 rounded-md bg-neutral-800 focus:outline-indigo-700 caret-purple-500' />
+                        <textarea placeholder='Message' rows="3" name='message' className='p-3 rounded-md bg-neutral-800 focus:outline-indigo-700 caret-purple-500'></textarea>
+                        <button
+                            disabled={loading}
+                            className={`w-full p-3 rounded-md transition-colors duration-300 ease-in-out bg-gradient-to-tl from-purple-800 via-fuchsia-700 to-purple-800 hover:filter hover:contrast-150 disabled:from-purple-800/50  disabled:via-fuchsia-700/50 disabled:to-purple-800/50 disabled:text-white/50 disabled:hover:contrast-100`}>
+                            {loading ? 'sending...' : 'Send'}
+                        </button>
+                        {
+                            error &&
+                            <span className='w-full p-2 flex justify-center items-center gap-x-3 text-sm bg-red-300/10 text-red-500/80'>
+                                Error in sending email
+                                <RiErrorWarningLine />
+                            </span>
+                        }
+                        {
+                            success &&
+                            <span className='w-full p-2 flex justify-center items-center gap-x-3 text-sm bg-emerald-300/10 text-emerald-600/80'>
+                                Successfully send your message
+                                <RiCheckLine />
+                            </span>
+                        }
                     </motion.form>
                 </div>
 
-        
+
             </motion.section>
         </>
     )

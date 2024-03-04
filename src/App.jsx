@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import './App.scss';
 import About from './Components/About Section/About';
 import Bg from './Components/Blured Bg/Bg';
@@ -26,31 +26,33 @@ function App() {
   }, []);
   
   return (
-    <AnimatePresence mode='wait'>
-      {isLoading ? (
-        <motion.div onAnimationComplete={() => setIsLoading(false)}
-          key={'loader'} className='relative' >
-          <Loader setLoading={setIsLoading} />
-        </motion.div>
-      )
-        :
-        (
-          <motion.div key="content" className='container relative bg-black text-white dm-sans'>
-            <NavBar />
-            <Sidebar />
-            <Cursor />
-            <Socials />
-            <HeroSection />
-            <Bg />
-            <About />
-            <Skills />
-            <Education />
-            <Projects />
-            <Contact />
+    <LayoutGroup>
+      <AnimatePresence mode='wait'>
+        {isLoading ? (
+          <motion.div onAnimationComplete={() => setIsLoading(false)}
+            key={'loader'} className='relative' >
+            <Loader setLoading={setIsLoading} />
           </motion.div>
         )
-      }
-    </AnimatePresence>
+          :
+          (
+          <motion.div key="content" className='container relative bg-black text-gray-100 dm-sans'>
+              <NavBar />
+              <Sidebar />
+              <Cursor />
+              <Socials />
+              <HeroSection />
+              <Bg />
+              <About />
+              <Skills />
+              <Education />
+              <Projects />
+              <Contact />
+            </motion.div>
+          )
+        }
+      </AnimatePresence>
+    </LayoutGroup>
   );
 }
 

@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.2.0",
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "@remixicon/react": "^4.1.1",
     "framer-motion": "^11.0.3",

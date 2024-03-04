@@ -60,7 +60,7 @@ function About() {
                         <motion.h2 ref={ref} variants={textVariants} style={{ opacity }} className="text-5xl font-semibold">Who am I ?</motion.h2>
                         
                         {/* about me */}
-                        <motion.p variants={textVariants} style={{ opacity }} className='text-2xl text-neutral-200 backdrop-blur-md'>
+                        <motion.p variants={textVariants} style={{ opacity }} className='text-lg md:text-2xl  text-center text-gray-300 backdrop-blur-md'>
                             {about}
                         </motion.p>
 
@@ -98,7 +98,7 @@ function About() {
 
 function Points({data}) {
     return (
-        <motion.div variants={pointVariants} className='w-1/2 md:w-1/4 flex flex-wrap flex-col items-center gap-1 p-1'>
+        <motion.div variants={pointVariants} className='w-1/2 md:w-1/4 flex flex-wrap flex-col items-center gap-2 p-1'>
             <motion.div className='w-16 md:w-20 h-16 md:h-20  flex   justify-center items-center rounded-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-300 via-purple-600 to-indigo-600 '>
                 <img className='w-1/2 h-1/2 ' src={data.icon} alt={data.title} />
             </motion.div>

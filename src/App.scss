@@ -46,9 +46,6 @@ html {
   font-style: normal;
 }
 
-section {
-  // scroll-snap-align: center;
-}
 
 .container {
   padding: 0 12%;
@@ -66,6 +63,35 @@ section {
 ::selection{
   background: #8640ff;
   color: #fff;
+}
+
+
+body {
+  --sb-track-color: #171717;
+  --sb-thumb-color: #8f2cff;
+  --sb-size: 7px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 7px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
 }
 
 

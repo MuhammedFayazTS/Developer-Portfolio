@@ -88,12 +88,12 @@ function NavBar() {
     <>
       <motion.nav
         variants={navVariant} animate={hidden ? "hidden" : "visible"}
-        className={`flex items-center justify-between h-[5rem] sticky top-0 z-10  `}>
+        className={`flex items-center justify-between h-[5rem] sticky top-0 z-50`}>
         {/* logo */}
-        <span className='flex items-center text-xl font-semibold gap-1'>
-          <img className='w-8 h-8 aspect-square' src={logo} alt="logo.png" />
+        <motion.span layoutId='logoIcon' className='flex items-center text-xl font-semibold gap-2'>
+          <motion.img  className='w-8 h-8 aspect-square' src={logo} alt="logo.png" />
           <span>Dev</span>
-        </span>
+        </motion.span>
 
         {/* links */}
         <motion.ul ref={listRef} initial={"initial"} animate={isInView && "visible"} transition={{ type: 'spring', staggerChildren: 0.1 }} className='hidden md:flex items-center gap-5'>
