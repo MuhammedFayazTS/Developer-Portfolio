@@ -50,19 +50,19 @@ function Contact() {
 
     return (
         <>
-            <motion.section id='contact' ref={ref} initial="initial" whileInView="animate" className='md:snap-center h-screen w-full flex flex-col md:flex-row items-center md:divide-x divide-neutral-800 space-x-10 pt-[6rem]'>
+            <motion.section id='contact' ref={ref} initial="initial" whileInView="animate" className='md:snap-center min-h-screen w-full flex flex-col md:flex-row items-center md:divide-x divide-neutral-800 space-x-10 pt-[6rem]'>
                 <div className="h-2/3 w-full md:w-1/2 p-5 flex flex-col justify-center gap-6">
                     <motion.h2 className='text-7xl font-bold' variants={variants}>Lets Connect,</motion.h2>
                     <dl className='flex flex-col gap-5'>
                         <motion.dl>
-                            <motion.dt className='text-2xl font-semibold' variants={variants} >Mail</motion.dt >
-                            <motion.dd className='text-xl' variants={variants}>
+                            <motion.dt className='text-lg md:text-2xl font-semibold' variants={variants} >Mail</motion.dt >
+                            <motion.dd className='text-sm md:text-xl' variants={variants}>
                                 <a target='blank' href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
                             </motion.dd >
                         </motion.dl>
                         <motion.dl>
-                            <motion.dt className='text-2xl font-semibold' variants={variants} >Phone</motion.dt >
-                            <motion.dd className='text-xl' variants={variants}>
+                            <motion.dt className='text-lg md:text-2xl font-semibold' variants={variants} >Phone</motion.dt >
+                            <motion.dd className='text-sm md:text-xl' variants={variants}>
                                 <a target='blank' href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
                             </motion.dd >
                         </motion.dl>

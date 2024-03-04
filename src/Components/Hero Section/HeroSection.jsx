@@ -3,6 +3,7 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import ScrollLottie from '../../assets/Lottie/Scroll.json'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
+import resume from '../../Content/Muhammed Fayaz TS - Resume.pdf'
 
 const textVariants = {
     initial: {
@@ -67,7 +68,9 @@ function HeroSection() {
                     </motion.div>
 
                     {/* buttons */}
-                    <motion.button variants={textVariants} className='bg-transparent  mt-4 py-2 px-4  rounded-md border'>Resume</motion.button>
+                    <motion.a 
+                    href={resume} download={true}
+                    variants={textVariants} className='bg-transparent  mt-4 py-2 px-4  rounded-md border'>Resume</motion.a>
 
                 </motion.div>
 

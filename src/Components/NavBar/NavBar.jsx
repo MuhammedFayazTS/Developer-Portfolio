@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import icon from '../../assets/react.svg'
+import resume from '../../Content/Muhammed Fayaz TS - Resume.pdf'
 import { motion, useInView, useMotionValueEvent, useScroll } from 'framer-motion'
 import logo from '../../assets/Images/code.png'
 import { navList } from '../../Content/data'
@@ -110,7 +110,9 @@ function NavBar() {
         </motion.ul>
 
         {/* end button */}
-        <a href={icon} download={true} className='hidden md:block outline outline-1 px-3 py-1 rounded-md hover:bg-white hover:text-black'>Resume</a>
+        <motion.a href={resume} download={true}
+        initial={{opacity:0,scale:0}} animate={{opacity:1,scale:1}} transition={{duration:1,type:'spring'}}
+        className='hidden md:block outline outline-1 px-3 py-1 rounded-md hover:bg-white hover:text-black'>Resume</motion.a>
 
       </motion.nav>
     </>
