@@ -1,28 +1,27 @@
 import { motion, useInView } from 'framer-motion'
 import React, { useRef } from 'react'
-import bg from '../../assets/Videos/Bg.webm'
 
 const item = {
-    hidden:{
+    hidden: {
         opacity: 0,
-        scale:0.6,
+        scale: 0.6,
     },
-    show:{
+    show: {
         opacity: 1,
         scale: 1,
-        transition:{
-            type:"spring",
-            stiffness:200,
-            damping:50
+        transition: {
+            type: "spring",
+            stiffness: 200,
+            damping: 50
         }
     },
-    exit:{
+    exit: {
         opacity: 0,
-        scale:0.6,
-        transition:{
-            type:"spring",
-            stiffness:200,
-            damping:50
+        scale: 0.6,
+        transition: {
+            type: "spring",
+            stiffness: 200,
+            damping: 50
         }
     }
 };
@@ -33,14 +32,15 @@ function Bg() {
     return (
         <>
             {/* animated bg gardient */}
-            <motion.div ref={ref}
+            {/* <motion.div ref={ref}
             initial="hidden" animate={inView && "show"} exit="exit"
             className="absolute top-0 left-0 w-full h-screen md:h-[calc(100vh+5rem)] opacity-20  z-0 overflow-hidden bg-gray-900/10">
-                <motion.video variants={item} autoPlay muted loop   className='w-full h-full filter blur-[1px]  object-cover' >
-                    <source src={bg} />
-                </motion.video>
-            </motion.div>
+            </motion.div> */}
             {/* animated bg gardient  end*/}
+
+            <div className="absolute top-0 left-0 w-full h-screen md:h-[calc(100vh+5rem)] bg-black">
+                <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+            </div>
 
         </>
     )

@@ -1,7 +1,6 @@
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import React, { useRef } from 'react'
-import { about } from '../../Content/data';
-import SpeedICO from '../../assets/Icons/speed-svgrepo-com.svg'
+import { about, points } from '../../Content/data';
 import MyPic from '../../assets/Images/ME.webp'
 
 const pointVariants = {
@@ -82,10 +81,11 @@ function About() {
                 <motion.div initial={"initial"} animate={isInViewPoints && "animate"} viewport={{ once: true }} transition={{ type: 'spring', staggerChildren: 0.3 }}
                     className="md:min-h-screen md:snap-center flex md:justify-center items-center py-16 md:py-0  my-16 md:my-0 ">
                     <div ref={pointRef} className='flex flex-wrap gap-y-5' >
-                        <Points />
-                        <Points />
-                        <Points />
-                        <Points />
+                        {
+                            points.map(point=>(
+                                <Points key={point.title} data={point} />
+                            ))
+                        }
                     </div>
                 </motion.div>
 
@@ -96,14 +96,14 @@ function About() {
 }
 
 
-function Points() {
+function Points({data}) {
     return (
         <motion.div variants={pointVariants} className='w-1/2 md:w-1/4 flex flex-wrap flex-col items-center gap-1 p-1'>
             <motion.div className='w-16 md:w-20 h-16 md:h-20  flex   justify-center items-center rounded-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-300 via-purple-600 to-indigo-600 '>
-                <img className='w-1/2 h-1/2 ' src={SpeedICO} alt={SpeedICO} />
+                <img className='w-1/2 h-1/2 ' src={data.icon} alt={data.title} />
             </motion.div>
-            <h6 className="text-3xl font-semibold">Fast</h6>
-            <p className="text-md text-center p-1  text-neutral-400">Fast load times and lag free interaction, my highest priority.</p>
+            <h6 className="text-3xl font-semibold">{data.title}</h6>
+            <p className="text-md text-center p-1  text-neutral-400">{data.desc}</p>
         </motion.div>
 
     )

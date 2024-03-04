@@ -1,4 +1,7 @@
-import ChatApp from '../assets/Videos/ChatApp.mp4'
+// videos
+import ChatApp from '../assets/Videos/ChatApp.webm'
+import WeatherApp from '../assets/Videos/WeatherApp.webm'
+import TurfBooking from '../assets/Videos/TurfBooking.webm'
 // icons
 import TailwindIco from '../assets/Icons/tailwind.svg'
 import HTMLIco from '../assets/Icons/html.svg'
@@ -17,6 +20,12 @@ import GITHUBIco from '../assets/Icons/github-icon.svg'
 import GITIco from '../assets/Icons/git-icon.svg'
 import REDUXIco from '../assets/Icons/redux.svg'
 import TYPESCRIPTIco from '../assets/Icons/typescript.svg'
+// points icon
+import fastIco from '../assets/Icons/PointsIcon/fast.svg'
+import dynamicIco from '../assets/Icons/PointsIcon/dynamic.svg'
+import maintainableIco from '../assets/Icons/PointsIcon/maintainble.svg'
+import responsiveIco from '../assets/Icons/PointsIcon/responsive.svg'
+
 
 
 // nav list
@@ -68,7 +77,7 @@ export const projects = [
     {
       id: 1,
       title: "Turf Booking Application",
-      video: ChatApp,
+      video: TurfBooking,
       image: "https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?cs=srgb&dl=pexels-pixabay-274506.jpg&fm=jpg",
       desc: "Focus on your getting your thoughts out and crafting the best message while Chronicle does the heavy lifting for you",
       technologies: [REACTIco, MONGODBIco, EXPRESSIco, NODEIco]
@@ -85,19 +94,19 @@ export const projects = [
     {
       id: 3,
       title: "Weather Application",
-      video: ChatApp,
+      video: WeatherApp,
       image: "https://www.sketchappsources.com/resources/source-image/weather-app-icons.jpg",
       desc: "loremjdbsnkhabshbadshbaskhbdskabkdbsakhbskhb dskhabdkhbadskbkhadsbhdbs",
       technologies: [REACTIco, MONGODBIco, EXPRESSIco, NODEIco]
     },
-    {
-      id: 4,
-      title: "Weather Application",
-      video: ChatApp,
-      image: "https://www.sketchappsources.com/resources/source-image/weather-app-icons.jpg",
-      desc: "loremjdbsnkhabshbadshbaskhbdskabkdbsakhbskhb dskhabdkhbadskbkhadsbhdbs",
-      technologies: [REACTIco, MONGODBIco, EXPRESSIco, NODEIco]
-    },
+    // {
+    //   id: 4,
+    //   title: "Weather Application",
+    //   video: ChatApp,
+    //   image: "https://www.sketchappsources.com/resources/source-image/weather-app-icons.jpg",
+    //   desc: "loremjdbsnkhabshbadshbaskhbdskabkdbsakhbskhb dskhabdkhbadskbkhadsbhdbs",
+    //   technologies: [REACTIco, MONGODBIco, EXPRESSIco, NODEIco]
+    // },
   ]
 
 
@@ -119,3 +128,27 @@ export const socialLinks = {
   linkedin:"https://www.linkedin.com/in/muhammed-fayaz-t-s-64a934285",
   whatsapp:"https://wa.link/uo2gj3"
 }
+
+
+export const points = [
+  {
+    title:"Fast",
+    desc:"Fast load times and lag free interaction, my highest priority.",
+    icon:fastIco
+  },
+  {
+    title:"Responsive",
+    desc:"My layouts will work on any device, big or small.",
+    icon:responsiveIco
+  },
+  {
+    title:"Dynamic",
+    desc:"Websites don't have to be static, I love making pages come to life.",
+    icon:dynamicIco
+  },
+  {
+    title: "Maintainabile",
+    desc: "Well-structured code base, good documentation .",
+    icon:maintainableIco
+  },
+]
