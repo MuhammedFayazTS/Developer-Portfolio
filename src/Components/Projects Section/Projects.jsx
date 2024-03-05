@@ -31,9 +31,9 @@ function Projects() {
             <motion.section id='portfolio' variants={variants} initial="hidden" whileInView="visible" ref={ref} className='min-h-screen flex flex-col md:flex-row items-center justify-center pt-[6rem] md:pt-6 '>
                 {/* headings */}
                 <motion.div className='h-fit flex place-self-start flex-col ml-1 md:ml-0 md:mr-[10rem] md:sticky md:left-0 md:top-1/4'>
-                    <h2 className="text-2xl text-purple-500">✨Portfolio</h2>
+                    <h2 className="text-2xl text-purple-500">✨Projects</h2>
                     <h1 className="text-5xl md:text-7xl md:leading-[4.8rem] font-bold">Create at the speed of thought.</h1>
-                    <p className='mt-8'>Focus on your getting your thoughts out and crafting the best message while Chronicle does the heavy lifting for you</p>
+                    <p className='mt-8'>Where design meets code, crafting high-performance applications built to last.</p>
                 </motion.div>
                 {/* projects display section */}
                 <motion.main  className='snap-y snap-proximity flex flex-col items-center'>

@@ -54,7 +54,7 @@ function Modal({ data }) {
                                     </video>
                                     <h3 className="text-3xl md:text-4xl mt-6 font-semibold">{data.title}</h3>
 
-                                    <motion.div className="w-full flex justify-center rounded-lg gap-x-5 my-2 md:my-5 bg-neutral-900 p-2">
+                                    <motion.div className="w-full hidden md:flex justify-center rounded-lg gap-x-5 my-2 md:my-5 bg-neutral-900 p-2">
                                         {data?.technologies?.map((technologie, index) => (
                                             <img key={index} src={technologie} alt={technologie} className='w-7 md:w-10 h-7 md:h-10' />
                                         ))}
@@ -68,7 +68,7 @@ function Modal({ data }) {
                                         <RiCloseLine />
                                     </button>
 
-                                    <p className='md:text-justify text-sm md:text-xl my-2 text-gray-400'>{data.longDesc || data.desc}</p>
+                                    <p className='md:text-justify text-sm md:text-xl my-5 text-gray-400'>{data.longDesc || data.desc}</p>
                                     <div className="flex justify-center flex-wrap gap-5">
                                         {
                                             data.live &&
@@ -84,7 +84,7 @@ function Modal({ data }) {
                                                 Code
                                             </a>
                                         }
-                                        <button onClick={()=>setOpen(false)} target='blank' className="border-none px-8 py-1 md:py-2 rounded-md flex justify-center items-center gap-x-2 outline outline-1 outline-red-500/30 text-red-500/30">
+                                        <button onClick={()=>setOpen(false)} target='blank' className="block md:hidden border-none px-8 py-2 rounded-md flex justify-center items-center gap-x-2 bg-red-700">
                                             close
                                         </button>
                                     </div>
@@ -99,7 +99,7 @@ function Modal({ data }) {
             <motion.button
                 whileHover={{ scale: 1.1 }}
                 onClick={(e) => setOpen(prev => !prev)}
-                className='w-28 py-1 flex justify-center items-center rounded text-sm md:text-base text-gray-200  outline outline-1 outline-gray-700 bg-gradient-to-t from-gray-900 via-purple-900 to-violet-600' >Learn More</motion.button>
+                className='w-28 py-1 flex justify-center items-center rounded-sm text-sm md:text-base text-gray-200  outline outline-1 outline-gray-800 hover:outline-purple-400 bg-transparent' >Learn More</motion.button>
         </>
     );
 }

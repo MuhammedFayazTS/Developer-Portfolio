@@ -57,7 +57,7 @@ function HeroSection() {
                     {/* name */}
                     <motion.h2 variants={textVariants} className="text-5xl md:text-7xl font-extrabold text-start max-w-md ">Muhammed Fayaz TS</motion.h2>
                     {/* designation */}
-                    <motion.div variants={textVariants} className="text-xl md:text-3xl mt-4 text-transparent bg-clip-text bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600">
+                    <motion.div variants={textVariants} className="text-xl md:text-3xl mt-4 font-medium text-transparent bg-clip-text bg-gradient-to-b from-gray-600 via-purple-900 to-violet-600">
                         <Typewriter
                             options={{
                                 strings: ['Front-End Developer', 'Back-End Developer'],

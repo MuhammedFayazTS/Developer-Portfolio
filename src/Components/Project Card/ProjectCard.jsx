@@ -21,7 +21,7 @@ function ProjectCard({ data }) {
     return (
         <>
             <motion.section initial={{ scale: 0.5 }} whileInView={{ scale: 1 }} transition={{ type: 'spring', damping: 40, stiffness: 100 }} className='md:snap-center h-fit md:h-screen w-full  flex justify-center items-center pt-[15%] '>
-                <motion.div initial="initial" whileHover={"hover"} className="w-full md:w-[450px] aspect-square  rounded-lg p-2 flex flex-col items-center outline outline-1 outline-white/20 " >
+                <motion.div initial="initial" whileHover={"hover"} className="w-full md:w-[450px] aspect-square  rounded-lg px-2 pb-5 md:p-2 flex flex-col items-center outline outline-1 outline-white/20 " >
                     <motion.video variants={variants} className='w-full h-3/5 object-cover rounded-md' autoPlay loop muted>
                         <source src={data.video} type="video/mp4" />
                         Your browser does not support the video tag.

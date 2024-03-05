@@ -66,7 +66,7 @@ function Loader() {
         >
 
             <div className='flex justify-center items-center gap-3'>
-                <motion.svg  className={`w-16 stroke-purple-600 ${completed && 'fill-purple-700  stroke-none'}`} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <motion.svg  className={`w-16 stroke-purple-700 `} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <motion.path
                     layoutId='logoIcon'
                         initial={{ pathLength: 0,y:0,opacity:0 }}
@@ -78,13 +78,13 @@ function Loader() {
                 <motion.span
                 initial={{opacity:0,x:-100,y:0}} animate={completed && {opacity:1,x:0,y:0}}  exit={{opacity:0,y:-100}}
                 transition={{type:'spring',damping:20,stiffness:100}}
-                className='text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600'>
+                className='text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-b from-gray-500 via-purple-900 to-violet-600'>
                     Developer
                 </motion.span>
             </div>
 
             <motion.div
-                className="hidden md:block slidingTextContainer w-1/2 absolute -bottom-24 text-[#ffffff09] whitespace-nowrap text-[50vh] font-bold pointer-events-none"
+                className="w-1/2 absolute bottom-0 md:-bottom-24 text-[#ffffff09] whitespace-nowrap text-[30vh] md:text-[50vh] font-bold pointer-events-none"
                 variants={sliderVariants}
                 initial="initial"
                 animate="animate"
