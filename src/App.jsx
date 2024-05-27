@@ -36,7 +36,7 @@ function App() {
         )
           :
           (
-          <motion.div key="content" className='container relative bg-black text-gray-100 dm-sans'>
+          <motion.div key="content" className='container max-w-full relative bg-black text-gray-100 dm-sans'>
               <NavBar />
               <Sidebar />
               <Cursor />
